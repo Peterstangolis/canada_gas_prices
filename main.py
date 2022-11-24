@@ -1,7 +1,18 @@
+## Importing my functions
+
+
+
+## Importing libraries
 import datetime
+import pandas as pd
+from bs4 import BeautifulSoup
+import streamlit as st
+import folium
 
 
 
+# SETTING PAGE CONFIG TO WIDE MODE AND ADDING A TITLE AND FAVICON
+st.set_page_config(layout="wide", page_title="Canadian Gas Prices", page_icon=":maple_leaf:")
 
 
 def test_func():
@@ -14,4 +25,3 @@ def test_func():
 if __name__ == '__main__':
     test_func()
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
