@@ -1,5 +1,5 @@
 ## Importing my functions
-
+from my_functions.date_functions import add_suffix
 
 
 ## Importing libraries
@@ -24,4 +24,5 @@ def test_func():
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
     test_func()
+    add_suffix()
 
