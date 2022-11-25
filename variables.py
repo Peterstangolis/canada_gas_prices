@@ -12,6 +12,9 @@ period_10y = '11y'
 period_15y = '16y'
 periods = (period_1d, period_last_month, period_1y, period_5y, period_10y, period_15y)
 
+days = [1, 60]
+years = [1, 5, 10, 15]
+
 
 url_gaswizard = 'https://gaswizard.ca/gas-price-predictions/'
 
