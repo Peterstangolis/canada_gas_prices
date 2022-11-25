@@ -1,6 +1,9 @@
 ## Importing my functions
 from my_functions.date_functions import add_suffix, todays_date, date_from_website
 from my_functions.oil_news_headlines import oil_headlines
+from my_functions.next_day_gas_prices_canada import clean_next_day_gas_prices_can
+from my_functions.clean_statscan_hist_gas_prices_canada import clean_hist_gas_can
+from my_functions.geo_data_cleaning import clean_geo_data
 
 
 
@@ -93,5 +96,9 @@ with col3:
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
     print("Program Running:")
+    clean_hist_gas_can()
+    clean_next_day_gas_prices_can()
+    clean_geo_data()
+    print("End of program")
 
 

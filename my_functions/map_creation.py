@@ -34,4 +34,4 @@ else:
 
 clean_hist_gas_can()
 clean_next_day_gas_prices_can()
-#clean_geo_data()
+clean_geo_data()
