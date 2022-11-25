@@ -1,4 +1,4 @@
-
+import numpy as np
 import pandas as pd
 import geopandas as gpd
 
@@ -10,12 +10,11 @@ def clean_geo_data():
     f = pathlib.Path() / 'data' / 'georef-canada-province.geojson'
     assert f.exists()
     gdf = gpd.read_file(f)
-    gdf['last_month_avg'] = None
+    gdf['last_month_avg'] = np.NaN
     gdf["prov_name_en"] = gdf["prov_name_en"].str.strip()
     index_vals = df_gas_price_last_month.index.values
     index_vals = [x.strip() for x in index_vals]
-
-    df_gas_price_last_month.index = index_vals
+    df_gas_price_last_month.index = df_gas_price_last_month.index.map(str.strip)
 
     for i, p in enumerate(gdf.prov_name_en.values):
 

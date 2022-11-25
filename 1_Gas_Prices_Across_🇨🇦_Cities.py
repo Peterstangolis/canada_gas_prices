@@ -17,6 +17,9 @@ import streamlit as st
 import folium
 
 
+clean_next_day_gas_prices_can()
+clean_geo_data()
+
 today, long_format_today, last_month = todays_date()
 tomorrow_long_format = add_suffix()
 date_from_gaswizard = date_from_website()
@@ -166,11 +169,11 @@ with st.sidebar.expander(label='🖱 CLICK TO REVEAL DATA SOURCES USED IN DASHBO
 
 
 # Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print("Program Running:")
-    clean_hist_gas_can()
-    clean_next_day_gas_prices_can()
-    clean_geo_data()
-    print("End of program")
+# if __name__ == '__main__':
+#     print("Program Running:")
+#     clean_hist_gas_can()
+#     clean_next_day_gas_prices_can()
+#     clean_geo_data()
+#     print("End of program")
 
 
