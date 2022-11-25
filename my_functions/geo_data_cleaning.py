@@ -7,13 +7,18 @@ import pathlib
 # 1. clean the geodata file and add last months avg gas prices across provinces
 def clean_geo_data():
     df_gas_price_last_month = pd.read_csv('data/last_month_reg_gas_avg_prov.csv', index_col=['PROVINCE'])
-    print(df_gas_price_last_month.head())
     f = pathlib.Path() / 'data' / 'georef-canada-province.geojson'
     assert f.exists()
     gdf = gpd.read_file(f)
     gdf['last_month_avg'] = None
+    gdf["prov_name_en"] = gdf["prov_name_en"].str.strip()
+    index_vals = df_gas_price_last_month.index.values
+    index_vals = [x.strip() for x in index_vals]
+
+    df_gas_price_last_month.index = index_vals
 
     for i, p in enumerate(gdf.prov_name_en.values):
+
         try:
             v = df_gas_price_last_month.loc[p][0]
             gdf.at[i, 'last_month_avg'] = v

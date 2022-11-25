@@ -4,6 +4,7 @@ from my_functions.oil_news_headlines import oil_headlines
 from my_functions.next_day_gas_prices_canada import clean_next_day_gas_prices_can
 from my_functions.clean_statscan_hist_gas_prices_canada import clean_hist_gas_can
 from my_functions.geo_data_cleaning import clean_geo_data
+from my_functions.map_creation import folium_map
 
 
 
@@ -45,7 +46,7 @@ st.markdown(f"{title}", unsafe_allow_html=True)
 st.markdown(f"<h4 style='color:#F2E2C4; font-size:25px;'> Select <mark style = 'color:#0076A9; background-color:transparent; font-size: 29px;'> BLUE </mark> icon to view the upcoming gas price in your city </h4>", unsafe_allow_html = True)
 st.markdown(f"<h4 style='color:#F2E2C4; font-size:20px;'> Scroll over a province to view the average regular gas price for the previous month  </h4>", unsafe_allow_html = True)
 
-
+folium_map()
 
 ## Oil Headline News Sections ==========================================================================================
 st.markdown("<br>", unsafe_allow_html=True)
@@ -91,6 +92,77 @@ with col3:
             image_link = f"<a href='{headlines[key][1]}'><img src= '{website_image}' alt = 'article image' style = 'width:190px;height:120px; border: 2px solid lightgrey;border-radius:10px;'></a>"
             st.markdown(f"{image_link}", unsafe_allow_html=True)
         st.markdown("<br>", unsafe_allow_html=True)
+
+
+with st.sidebar:
+    st.markdown("<br>", unsafe_allow_html=True)
+    df = pd.read_excel("data/tomorrow_gasprices_canadiancities_latlng.xlsx")
+    cities = df["City"].unique().tolist()
+    location_selector = st.selectbox(
+        "SELECT A CANADIAN CITY FROM DROPDOWN",
+        cities
+    )
+    st.markdown("<br>", unsafe_allow_html=True)
+    st.markdown(f"<mark style = 'color:#F2E2C4;background-color:clear;font-family:liberation serif;font-size:16px;'> GAS PRICES ON {t:%b %d, %Y} IN: </mark>", unsafe_allow_html=True)
+    st.markdown(f"<mark style= 'background-color:clear;text-align:center;font-size:20px;;color:#261C25;font-family:liberation serif;font-weight:bold; background-image: linear-gradient(to right, #70787Dcc, #CA4D57cc, #BDA523cc); text-transform:uppercase; border-radius: 6px; padding: 10px 10px;letter-spacing:.2rem;'>{location_selector}</mark>", unsafe_allow_html=True)
+    st.markdown("<br>", unsafe_allow_html=True)
+    #position: relative; left:50px;top:10px;right:50px;
+
+    df_temp = df[df["City"] == location_selector].reset_index()
+
+    col5, col6, col7 = st.sidebar.columns(3, gap='small')
+    with col5:
+        st.markdown("<hr style ='width:95%;text-align:left;height:3px;background-color:#70787D;' >", unsafe_allow_html=True)
+        st.markdown("<p style='color:#70787D; font-weight:bold; font-family:liberation serif;letter-spacing:.1rem;'> REGULAR</p>", unsafe_allow_html=True)
+        if int(df_temp._get_value(0, 'Amount')) == 0:
+            color = 'off'
+        else:
+            color = 'inverse'
+        st.metric(label="", value=df_temp._get_value(0, 'Regular'), delta=int(df_temp._get_value(0, 'Amount')), delta_color=color)
+    with col6:
+        st.markdown("<hr style ='width:95%;text-align:left;height:3px;background-color:#CC2533;' >",
+                    unsafe_allow_html=True)
+        st.markdown("<p style='color:#CC2533; font-weight:bold; font-family:liberation serif;letter-spacing:.1rem;'> PREMIUM</p>", unsafe_allow_html=True)
+        premium_list = df_temp["Premium"].str.split(" ")[0]
+        premium_price = premium_list[0]
+        if len(premium_list) == 2:
+            amount = 0
+            color = 'off'
+        else:
+            symbol = premium_list[1]
+            amount = premium_list[2]
+            color = 'inverse'
+        st.metric(label="", value = float(premium_price) , delta = amount, delta_color= color)
+    with col7:
+        st.markdown("<hr style ='width:95%;text-align:left;height:3px;background-color:#BDA523;' >",
+                    unsafe_allow_html=True)
+        st.markdown("<p style='color:#BDA523; font-weight:bold; font-family:liberation serif;letter-spacing:.1rem;'> DIESEL</p>", unsafe_allow_html=True)
+
+        diesel_list = df_temp["Diesel"].str.split(" ")[0]
+        diesel_price = diesel_list[0]
+
+        if len(diesel_list) == 2:
+            amount = 0,
+            color = 'off'
+            st.metric(label="", value=float(diesel_price), delta=amount[0], delta_color=color)
+        else:
+            symbol = diesel_list[1]
+            amount = diesel_list[2]
+            color = 'inverse'
+        #print(diesel_price, amount[0], color)
+            st.metric(label="", value=float(diesel_price), delta=amount, delta_color=color)
+
+
+    st.markdown("<br>", unsafe_allow_html=True)
+    st.markdown("<hr>", unsafe_allow_html=True)
+    #st.markdown("<br>", unsafe_allow_html=True)
+
+st.sidebar.markdown("<br>", unsafe_allow_html=True)
+
+with st.sidebar.expander(label='🖱 CLICK TO REVEAL DATA SOURCES USED IN DASHBOARD', expanded=False):
+    st.caption("The gas prices have been retrieved from www.gaswizard.ca.\n \
+    The historical gas prices in 🇨🇦 have been obtained from https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810000101\n\
+    Updated USD to CAD rates along with CRUDE OIL prices were obtained using the yfinance package https://pypi.org/project/yfinance/")
 
 
 # Press the green button in the gutter to run the script.
