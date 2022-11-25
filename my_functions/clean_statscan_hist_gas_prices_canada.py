@@ -20,4 +20,7 @@ def clean_hist_gas_can():
 
     df_prov_avg_gas_prices_regular = df_cities.loc[(df_cities["REF_DATE"] == str(last_month_year)) & (df_cities["Type of fuel"] == "Regular Unleaded")].groupby(by=['PROVINCE'], dropna=False)['VALUE'].mean()
 
+    df_prov_avg_gas_prices_regular.index = df_prov_avg_gas_prices_regular.index.map(str.strip)
+
+
     df_prov_avg_gas_prices_regular.to_csv('data/last_month_reg_gas_avg_prov.csv')

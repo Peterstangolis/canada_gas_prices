@@ -16,7 +16,7 @@ from bs4 import BeautifulSoup
 import streamlit as st
 import folium
 
-
+clean_hist_gas_can()
 clean_next_day_gas_prices_can()
 clean_geo_data()
 

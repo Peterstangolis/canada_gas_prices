@@ -63,10 +63,8 @@ colorscale.caption = f"Average Provincial Gas Price for {last_month:%b-%Y}"
 
 ## change avg_gas_prices to string
 #gdf["last_month_avg"] = gdf["last_month_avg"].astype(str)
-print(gdf[['prov_name_en', 'last_month_avg']])
-print(gdf.info())
-print(df_gas_price_last_month)
-print(df_gas_price_last_month.info())
+
+
 
 def folium_map():
     from streamlit_folium import folium_static
@@ -84,13 +82,13 @@ def folium_map():
         geo_data=gdf,
         data=df_gas_price_last_month,
         columns=(df_gas_price_last_month.index, 'last_month_avg'),
-        nan_fill_color= 'lightgrey',
-        nan_fill_opacity=0.5,
+        nan_fill_color= 'grey',
+        nan_fill_opacity=0.7,
         key_on='properties.prov_name_en',
         line_color='green',
         line_weight=2,
         fill_color='YlOrRd',
-        fill_opacity=0.9,
+        fill_opacity=0.7,
         line_opacity=0.2,
         # legend_name=f'Last Month Avg Gas Prices {last_month_avg}',
         highlight=True
