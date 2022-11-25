@@ -1,4 +1,4 @@
-# a python file that contains variables used throughout the project
+# a python file that contains variables used throughout the project for easy access - modification
 
 
 # variables
