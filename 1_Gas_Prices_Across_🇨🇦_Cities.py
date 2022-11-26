@@ -42,7 +42,7 @@ st.set_page_config(layout="wide", page_title="Canadian Gas Prices", page_icon=":
 
 
 ## Inital Page Title of Streamlit APP
-title = f"<h4 style = 'font-size:40px; color:#F2E2C4; FONT-FAMILY:liberation serif;'> TOMORROW'S GAS PRICES IN CITIES ACROSS <mark style = 'font-family:liberation serif; font-size:2.0em; color:#CC2533; background-color:transparent;'>CANADA</mark></h4>"
+title = f"<h4 style = 'font-size:40px; color:#F2E2C4; FONT-FAMILY:liberation serif;'> TOMORROW'S GAS PRICES IN CITIES ACROSS <mark style = 'font-family:liberation serif; font-size:41px; color:#CC2533; background-color:transparent;'>CANADA</mark></h4>"
 
 
 st.markdown(f"{title}", unsafe_allow_html=True)
