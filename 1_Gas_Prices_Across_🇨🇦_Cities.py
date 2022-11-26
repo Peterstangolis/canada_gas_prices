@@ -42,7 +42,7 @@ st.set_page_config(layout="wide", page_title="Canadian Gas Prices", page_icon=":
 
 
 ## Inital Page Title of Streamlit APP
-title = f"<h4 style = 'font-size:55px; color:#F2E2C4; FONT-FAMILY:liberation serif;'> TOMORROW'S GAS PRICES IN CITIES ACROSS <mark style = 'font-family:liberation serif; font-size:55px; color:#CC2533; background-color: transparent;'>CANADA</mark></h4>"
+title = f"<h4 style = 'font-size:40px; color:#F2E2C4; FONT-FAMILY:liberation serif;'> TOMORROW'S GAS PRICES IN CITIES ACROSS <mark style = 'font-family:liberation serif; font-size:2.0em; color:#CC2533; background-color:transparent;'>CANADA</mark></h4>"
 
 
 st.markdown(f"{title}", unsafe_allow_html=True)
@@ -163,7 +163,7 @@ with st.sidebar:
 st.sidebar.markdown("<br>", unsafe_allow_html=True)
 
 with st.sidebar.expander(label='🖱 CLICK TO REVEAL DATA SOURCES USED IN DASHBOARD', expanded=False):
-    st.caption("The gas prices have been retrieved from www.gaswizard.ca.\n \
+    st.caption("The gas prices have been retrieved from www.gaswizard.ca. <br> \
     The historical gas prices in 🇨🇦 have been obtained from https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810000101\n\
     Updated USD to CAD rates along with CRUDE OIL prices were obtained using the yfinance package https://pypi.org/project/yfinance/")
 

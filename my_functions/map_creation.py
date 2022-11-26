@@ -7,8 +7,6 @@ from my_functions.next_day_gas_prices_canada import clean_next_day_gas_prices_ca
 from my_functions.clean_statscan_hist_gas_prices_canada import clean_hist_gas_can
 
 
-
-
 from datetime import date, timedelta, datetime
 
 import branca.colormap
@@ -32,7 +30,6 @@ if date_from_gaswizard == tomorrow_long_format:
     t = tomorrow
 else:
     t = today
-
 # clean_hist_gas_can()
 # clean_next_day_gas_prices_can()
 # clean_geo_data()
@@ -128,4 +125,4 @@ def folium_map():
     ## Save the map
     m.save('data/gas_prices.html')
     # st_map = st_folium(m, width = 1000, height = 700)
-    folium_static(m, width=1300, height=750)
+    folium_static(m, width=1100, height=700)
