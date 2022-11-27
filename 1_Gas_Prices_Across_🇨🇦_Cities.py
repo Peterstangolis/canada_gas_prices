@@ -21,17 +21,22 @@ clean_next_day_gas_prices_can()
 clean_geo_data()
 
 today, long_format_today, last_month = todays_date()
-tomorrow_long_format = add_suffix()
+tomorrow_long_format, two_days_ahead_long_format = add_suffix()
 date_from_gaswizard = date_from_website()
 
 tomorrow = today + timedelta(days=1)
+two_days_ahead = today + timedelta(days=2)
 
 if date_from_gaswizard == tomorrow_long_format:
     t = tomorrow
+elif date_from_gaswizard == two_days_ahead_long_format:
+    t = two_days_ahead
 else:
     t = today
 
 print(date_from_gaswizard)
+print(two_days_ahead_long_format)
+print(date_from_gaswizard == two_days_ahead_long_format)
 print(tomorrow_long_format)
 print(t)
 
@@ -51,9 +56,11 @@ st.markdown(f"<h4 style='color:#F2E2C4; font-size:20px;'> Scroll over a province
 
 folium_map()
 
+st.markdown("<hr>", unsafe_allow_html=True)
+
 ## Oil Headline News Sections ==========================================================================================
 st.markdown("<br>", unsafe_allow_html=True)
-st.markdown(f"<h3 style='color:#F2E2C4; font-size:45px; text-align: left;'>📰 LATEST OIL NEWS</h3>", unsafe_allow_html=True)
+st.markdown(f"<h3 style='color:#F2E2C4; font-size:41px; text-align: left;'>📰 LATEST OIL NEWS</h3>", unsafe_allow_html=True)
 st.markdown(f"<p style = 'color:#F2E2C4; font-size:18px; font-family: inter light; text-align: left;'> {today:%A %B %d, %Y} </p>", unsafe_allow_html=True)
 st.markdown("<br>", unsafe_allow_html=True)
 middle_article = int(round(len(headlines.keys())/2, 0))

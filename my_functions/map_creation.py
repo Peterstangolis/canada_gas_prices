@@ -21,13 +21,16 @@ import geopandas as gdp
 
 
 today, long_format_today, last_month = todays_date()
-tomorrow_long_format = add_suffix()
+tomorrow_long_format, two_days_ahead_long_format = add_suffix()
 date_from_gaswizard = date_from_website()
 
 tomorrow = today + timedelta(days=1)
+two_days_ahead = today + timedelta(days=2)
 
 if date_from_gaswizard == tomorrow_long_format:
     t = tomorrow
+elif date_from_gaswizard == two_days_ahead_long_format:
+    t = two_days_ahead
 else:
     t = today
 # clean_hist_gas_can()

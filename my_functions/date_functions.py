@@ -23,14 +23,22 @@ def add_suffix():
     today, full_day, last_month = todays_date()
 
     tomorrow = today + timedelta(days=1)
+    two_days_ahead = today + timedelta(days=2)
     day = tomorrow.day
+    two_days = two_days_ahead.day
     if 4 <= day <= 20 or 24 <= day <= 30:
         suffix = "th"
     else:
         suffix = ["st", "nd", "rd"][day % 10 - 1]
 
+    if 4 <= two_days <= 20 or 24 <= two_days <= 30:
+        suffix_2 = "th"
+    else:
+        suffix_2 = ["st", "nd", "rd"][day % 10 - 1]
+
     tomorrow_long_format = tomorrow.strftime(f"%A %#d{suffix} of %B %Y")
-    return tomorrow_long_format
+    two_days_ahead_long_format = two_days_ahead.strftime(f"%A %#d{suffix} of %B %Y")
+    return tomorrow_long_format, two_days_ahead_long_format
 
 # 3. This fuinction returns the date from 1 month ago (vs today) in 'mon-yy' format
 def last_month_year_current():
