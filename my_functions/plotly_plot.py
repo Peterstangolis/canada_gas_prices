@@ -151,12 +151,15 @@ def interactive_plot(fuel, location_type, location):
                       ticks='inside', tickwidth=1.5, tickcolor='#2C998B', ticklen=7, showline=True, linewidth=1,
                       linecolor='#2C998B',
                       showgrid=True,
+                      nticks = 5,
                       # gridwidth=0.3, gridcolor='grey',
                       range=[0, 170],
                       secondary_y=False)
     fig2.update_yaxes(title_text="Price of Gas /L",
                       ticks='inside', tickwidth=1.5, tickcolor=f'{c}', ticklen=7, showline=True, linewidth=1,
                       showgrid=False,
+                      nticks=5,
+                      tickvals=[80, 120, 160, 200],
                       # range = [60, 220],
                       secondary_y=True)
 
@@ -167,7 +170,7 @@ def interactive_plot(fuel, location_type, location):
         y=.85,
         xanchor="center",
         x=.5,
-        bgcolor = "#31333F"
+        bgcolor = "#282933"
     ))
 
     st.plotly_chart(fig2)
