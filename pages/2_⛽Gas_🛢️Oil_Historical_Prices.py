@@ -215,10 +215,9 @@ with col9:
     st.write(" ")
 with col10:
     with st.expander(label='🖱️ CLICK TO VIEW MORE INFO ABOUT CRUDE OIL PRICING', expanded=False):
-        st.markdown(f"<p style = 'color:lightgrey;font-size:12px;text-align:left;text-indent:70px'>"
-            f" testing testing 1,2,3</p>", unsafe_allow_html=True)
+        st.markdown("[PLACEHOLDER]")
 with col11:
     with st.expander(label=" CLICK TO VIEW INFO ABOUT GAS PRICING PRICING", expanded=False):
-        st.markdown(f"testing 1,2,3,4")
+        st.markdown("[PLACEHOLDER]")
 with col12:
     st.write(" ")
