@@ -113,7 +113,7 @@ with st.sidebar:
         cities
     )
     st.markdown("<br>", unsafe_allow_html=True)
-    st.markdown(f"<mark style = 'color:#F2E2C4;background-color:clear;font-family:liberation serif;font-size:16px;'> GAS PRICES ON {t:%b %d, %Y} IN: </mark>", unsafe_allow_html=True)
+    st.markdown(f"<mark style = 'color:#F2E2C4;background-color:clear;font-family:liberation serif;font-size:16px;'> GAS PRICES ON {t:%A %B %#d, %Y} IN: </mark>", unsafe_allow_html=True)
     st.markdown(f"<mark style= 'background-color:clear;text-align:center;font-size:20px;;color:#261C25;font-family:liberation serif;font-weight:bold; background-image: linear-gradient(to right, #70787Dcc, #CA4D57cc, #BDA523cc); text-transform:uppercase; border-radius: 6px; padding: 10px 10px;letter-spacing:.2rem;'>{location_selector}</mark>", unsafe_allow_html=True)
     st.markdown("<br>", unsafe_allow_html=True)
     #position: relative; left:50px;top:10px;right:50px;
