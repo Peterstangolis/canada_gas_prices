@@ -162,7 +162,7 @@ def interactive_plot(fuel, location_type, location):
 
     fig2.update_layout(legend=dict(
         orientation="h",
-        entrywidth=90,
+        entrywidth=100,
         yanchor="bottom",
         y=.85,
         xanchor="center",
