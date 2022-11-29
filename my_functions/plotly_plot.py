@@ -105,7 +105,7 @@ def interactive_plot(fuel, location_type, location):
     )
 
     fig2.add_trace(
-        go.Scatter(x=merged_df2['Date'], y = (merged_df2['VALUE']/100).round(1),
+        go.Scatter(x=merged_df2['Date'], y = (merged_df2['VALUE']/100).round(2),
                    name=f'{fuel} Gas Price', line_color=f'{c}', yaxis='y2'),
         secondary_y=True,
     )
@@ -159,7 +159,7 @@ def interactive_plot(fuel, location_type, location):
                       ticks='inside', tickwidth=1.5, tickcolor=f'{c}', ticklen=7, showline=True, linewidth=1,
                       showgrid=False,
                       tick0=.50,
-                      tickformat='.2f',
+                      tickformat='.3f',
                       secondary_y=True)
 
     fig2.update_layout(legend=dict(
