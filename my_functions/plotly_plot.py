@@ -111,7 +111,7 @@ def interactive_plot(fuel, location_type, location):
     )
     # Figure Title
     fig2.update_layout(
-        title_text=f"Monthly <span style='color:#2C998B;text-decoration: underline'> Oil </span> vs <span style='color:{c};text-decoration: underline;text-transform:uppercase;'>{fuel}</span> Gas Prices in<span style='color:#CC2533'> $CAD</span> <br><span style = 'font-size:16px;' >{merged_df2.iloc[0]['REF_DATE']}  to {merged_df2.iloc[len(merged_df2) - 1]['REF_DATE']} in</span> <span style = 'text-transform:uppercase;color:#D9981E;font-size:18px;'>{location}</span>",
+        title_text=f"Monthly <span style='color:#7D7870;text-decoration: underline'> Oil </span> vs <span style='color:{c};text-decoration: underline;text-transform:uppercase;'>{fuel}</span> Gas Prices in<span style='color:#CC2533'> $CAD</span> <br><span style = 'font-size:16px;' >{merged_df2.iloc[0]['REF_DATE']}  to {merged_df2.iloc[len(merged_df2) - 1]['REF_DATE']} in</span> <span style = 'text-transform:uppercase;color:#D9981E;font-size:18px;'>{location}</span>",
         template=custom_template
         # 'simple_white'
     )
