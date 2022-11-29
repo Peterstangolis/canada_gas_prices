@@ -145,7 +145,7 @@ with col4:
 with col5:
     st.markdown("<hr style ='width:40%;text-align:left;height:4px;background-color:#BDA523;' >", unsafe_allow_html=True)
     st.metric(label = "GAS", value = f"${current_can_mean_gas_price}/L", delta = None)
-    st.caption(f"{t:%b %d, %y}")
+    st.caption(f"{t:%b %d, %Y}")
     st.markdown("<hr style ='width:40%;text-align:left;height:4px;background-color:#BDA523;' >", unsafe_allow_html=True)
 
 with col6:
