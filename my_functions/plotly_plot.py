@@ -138,8 +138,10 @@ def interactive_plot(fuel, location_type, location):
             )
         )
     )
-    fig2.update_xaxes(ticks="inside", tickwidth=1.5, tickcolor='#F2E2C4', ticklen=5, showline=True, linewidth=1,
-                      linecolor='#F2E2C4')
+    fig2.update_xaxes(title_text = "Move slider (left or right) to narrow date range on chart above",
+                      ticks="inside", tickwidth=1.5, tickcolor='#F2E2C4', ticklen=5, showline=True, linewidth=1,
+                      linecolor='#F2E2C4',
+                      rangeslider_visible=True)
 
     fig2.update_layout(yaxis_tickprefix='$')
     fig2.update_layout(yaxis2_tickprefix='$')
