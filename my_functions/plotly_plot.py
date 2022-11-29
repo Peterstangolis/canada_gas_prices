@@ -171,7 +171,7 @@ def interactive_plot(fuel, location_type, location):
         y=.85,
         xanchor="center",
         x=.5,
-        bgcolor = "#232533"
+        bgcolor = None
     ))
 
     st.plotly_chart(fig2)
