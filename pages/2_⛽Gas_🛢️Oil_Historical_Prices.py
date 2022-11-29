@@ -72,7 +72,7 @@ if 'fuel_type' not in st.session_state:
 if 'city_prov' not in st.session_state:
     st.session_state.city_prov = 'COUNTRY'
 
-title = f"<h4 style = 'font-size:50px; color:#F2E2C4; FONT-FAMILY:liberation serif;'> A Glimpse of <mark style = 'font-family:liberation serif; font-size:55px; color:#2C998B; background-color: transparent;'>OIL</mark> & <mark style = 'font-family:liberation serif; font-size:55px; color:#BDA523; background-color: transparent;'>GAS</mark> Prices in \
+title = f"<h4 style = 'font-size:50px; color:#F2E2C4; FONT-FAMILY:liberation serif;'> A Glimpse of <mark style = 'font-family:liberation serif; font-size:55px; color:#7D7870; background-color: transparent;'>OIL</mark> & <mark style = 'font-family:liberation serif; font-size:55px; color:#BDA523; background-color: transparent;'>GAS</mark> Prices in \
         <mark style = 'font-family:liberation serif; font-size:55px; color:#CC2533; background-color: transparent;'>$CAD</mark>  </h4>"
 
 
