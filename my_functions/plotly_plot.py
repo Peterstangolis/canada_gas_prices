@@ -164,14 +164,16 @@ def interactive_plot(fuel, location_type, location):
                       tickformat='.3f',
                       secondary_y=True)
 
-    fig2.update_layout(legend=dict(
-        orientation="h",
-        entrywidth=100,
-        yanchor="bottom",
-        y=.85,
-        xanchor="center",
-        x=.5,
-        bgcolor = None
-    ))
+    # fig2.update_layout(legend=dict(
+    #     orientation="h",
+    #     entrywidth=100,
+    #     yanchor="bottom",
+    #     y=.85,
+    #     xanchor="center",
+    #     x=.5,
+    #     bgcolor = None
+    # ))
+
+    fig2.update_layout(showlegend=False)
 
     st.plotly_chart(fig2)
