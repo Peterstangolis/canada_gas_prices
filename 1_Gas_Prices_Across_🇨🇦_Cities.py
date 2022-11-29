@@ -122,8 +122,8 @@ with st.sidebar:
 
     col5, col6, col7 = st.sidebar.columns(3, gap='small')
     with col5:
-        st.markdown("<hr style ='width:95%;text-align:left;height:3px;background-color:#70787D;' >", unsafe_allow_html=True)
-        st.markdown("<p style='color:#70787D; font-weight:bold; font-family:liberation serif;letter-spacing:.1rem;'> REGULAR</p>", unsafe_allow_html=True)
+        st.markdown("<hr style ='width:95%;text-align:left;height:3px;background-color:#B5C2C9;' >", unsafe_allow_html=True)
+        st.markdown("<p style='color:#B5C2C9; font-weight:bold; font-family:liberation serif;letter-spacing:.1rem;'> REGULAR</p>", unsafe_allow_html=True)
         if int(df_temp._get_value(0, 'Amount')) == 0:
             color = 'off'
         else:

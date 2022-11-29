@@ -89,7 +89,7 @@ def interactive_plot(fuel, location_type, location):
     merged_df2.reset_index(drop=True, inplace=True)
 
     ## Fuel Type text colors:
-    r = '#70787D'
+    r = '#B5C2C9'
     p = '#CC2533'
     d = '#BDA523'
 
