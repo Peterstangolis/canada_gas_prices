@@ -16,6 +16,9 @@ from bs4 import BeautifulSoup
 import streamlit as st
 import folium
 
+with open('style.css') as f:
+    st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+
 clean_hist_gas_can()
 clean_next_day_gas_prices_can()
 clean_geo_data()
