@@ -47,12 +47,12 @@ st.set_page_config(layout="wide", page_title="Canadian Gas Prices", page_icon=":
 
 
 ## Inital Page Title of Streamlit APP
-title = f"<h4 style = 'font-size:40px; color:#F2E2C4; FONT-FAMILY:liberation serif;'> TOMORROW'S GAS PRICES IN CITIES ACROSS <mark style = 'font-family:liberation serif; font-size:41px; color:#CC2533; background-color:transparent;'>CANADA</mark></h4>"
+title = f"<h4 style = 'font-size:40px; color:#F2E2C4; FONT-FAMILY:liberation serif;'> UPCOMING GAS PRICES IN CITIES ACROSS <mark style = 'font-family:liberation serif; font-size:41px; color:#CC2533; background-color:transparent;'>CANADA</mark></h4>"
 
 
 st.markdown(f"{title}", unsafe_allow_html=True)
-st.markdown(f"<h4 style='color:#F2E2C4; font-size:25px;'> Select <mark style = 'color:#0076A9; background-color:transparent; font-size: 29px;'> BLUE </mark> icon to view the upcoming gas price in your city </h4>", unsafe_allow_html = True)
-st.markdown(f"<h4 style='color:#F2E2C4; font-size:20px;'> Scroll over a province to view the average regular gas price for the previous month  </h4>", unsafe_allow_html = True)
+st.markdown(f"<h4 style='color:#F2E2C4; font-size:25px;'> Select  the <mark style = 'color:#0076A9; background-color:transparent; font-size: 29px;'> BLUE </mark> icon to view the prices for REGULAR gas in your city </h4>", unsafe_allow_html = True)
+st.markdown(f"<h4 style='color:#F2E2C4; font-size:20px;'> Moving your cursor over a province will reveal the average price of REGULAR gas for {last_month} </h4>", unsafe_allow_html = True)
 
 folium_map()
 
