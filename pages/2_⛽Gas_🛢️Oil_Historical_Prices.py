@@ -95,10 +95,10 @@ st.markdown("<hr>", unsafe_allow_html=True)
 with col1:
     #st.subheader(f"{yest_close_date_cad_usd}")
     st.markdown("<br>", unsafe_allow_html=True)
-    st.markdown("<hr style ='width:40%;text-align:left;height:4px;background-color:#2C998B;' >", unsafe_allow_html=True)
+    st.markdown("<hr style ='width:40%;text-align:left;height:4px;background-color:#7D7870;' >", unsafe_allow_html=True)
     st.metric(label = "OIL", value = f"${yest_close_oil_price_CAD}", delta = f"{d:.2f}", delta_color='inverse')
     st.caption(f"{yest_close_date_oil}")
-    st.markdown("<hr style ='width:40%;text-align:left;height:4px;background-color:#164C45;' >", unsafe_allow_html=True)
+    st.markdown("<hr style ='width:40%;text-align:left;height:4px;background-color:#7D7870;' >", unsafe_allow_html=True)
     st.caption(
         f"{yest_close_date_cad_usd}: <mark style = 'color:#9FC131;'>${yest_USD_CAD_close}</mark>",
         unsafe_allow_html=True)
@@ -106,10 +106,10 @@ with col1:
 with col2:
     # st.subheader("1 YEAR")
     st.markdown("<br>", unsafe_allow_html=True)
-    st.markdown("<hr style ='width:40%;text-align:left;height:4px;background-color:#2C998B;' >", unsafe_allow_html=True)
+    st.markdown("<hr style ='width:40%;text-align:left;height:4px;background-color:#7D7870;' >", unsafe_allow_html=True)
     st.metric(label="OIL", value=f"${one_year_USD_CAD_close}", delta=None)
     st.caption(f"1 YEAR")
-    st.markdown("<hr style ='width:40%;text-align:left;height:4px;background-color:#164C45;' >", unsafe_allow_html=True)
+    st.markdown("<hr style ='width:40%;text-align:left;height:4px;background-color:#7D7870;' >", unsafe_allow_html=True)
 
     st.caption(
         f"{one_year_ago:%b-%Y}: <mark style = 'color:#9FC131;'>${cad_usd_hist_rates['period_1y']}</mark>",
@@ -118,11 +118,11 @@ with col2:
 with col3:
     #st.subheader("5 YEAR")
     st.markdown("<br>", unsafe_allow_html=True)
-    st.markdown("<hr style ='width:40%;text-align:left;height:4px;background-color:#2C998B;' >", unsafe_allow_html=True)
+    st.markdown("<hr style ='width:40%;text-align:left;height:4px;background-color:#7D7870;' >", unsafe_allow_html=True)
 
     st.metric(label = "OIL", value = f"${five_year_USD_CAD_close}", delta = None)
     st.caption(f"5 YEAR")
-    st.markdown("<hr style ='width:40%;text-align:left;height:4px;background-color:#164C45;' >", unsafe_allow_html=True)
+    st.markdown("<hr style ='width:40%;text-align:left;height:4px;background-color:#7D7870;' >", unsafe_allow_html=True)
 
     st.caption(
         f"{five_years_ago:%b-%Y}: <mark style = 'color:#9FC131;'>${cad_usd_hist_rates['period_5y']}</mark>",
@@ -131,10 +131,10 @@ with col3:
 with col4:
     #st.subheader("10 YEAR")
     st.markdown("<br>", unsafe_allow_html=True)
-    st.markdown("<hr style ='width:40%;text-align:left;height:4px;background-color:#2C998B;' >", unsafe_allow_html=True)
+    st.markdown("<hr style ='width:40%;text-align:left;height:4px;background-color:#7D7870;' >", unsafe_allow_html=True)
     st.metric(label = "OIL", value = f"${ten_year_USD_CAD_close}", delta = None)
     st.caption(f"10 YEAR")
-    st.markdown("<hr style ='width:40%;text-align:left;height:4px;background-color:#164C45;' >", unsafe_allow_html=True)
+    st.markdown("<hr style ='width:40%;text-align:left;height:4px;background-color:#7D7870;' >", unsafe_allow_html=True)
 
     st.caption(
         f"{ten_years_ago:%b-%Y}: <mark style = 'color:#9FC131;'>${cad_usd_hist_rates['period_10y']}</mark>",

@@ -100,7 +100,7 @@ def interactive_plot(fuel, location_type, location):
     # Add traces
     fig2.add_trace(
         go.Scatter(x=merged_df2['Date'], y=merged_df2["oil_close_CAD"].round(2),
-                   name='Oil Price', line_color='#2C998B', yaxis='y1'),
+                   name='Oil Price', line_color='#7D7870', yaxis='y1'),
         secondary_y=False,
     )
 
@@ -119,9 +119,9 @@ def interactive_plot(fuel, location_type, location):
     fig2.update_layout(
         yaxis1=dict(
             titlefont=dict(
-                color='#2C998B'),
+                color='#7D7870'),
             tickfont=dict(
-                color='#2C998B'
+                color='#7D7870'
             )
         ),
         yaxis2=dict(
@@ -148,8 +148,8 @@ def interactive_plot(fuel, location_type, location):
                       ticks="inside", tickwidth=1.5, tickcolor='#F2E2C4', ticklen=5, showline=True, linewidth=1,
                       linecolor='#F2E2C4')
     fig2.update_yaxes(title_text="Price of Crude Oil WTI",
-                      ticks='inside', tickwidth=1.5, tickcolor='#2C998B', ticklen=7, showline=True, linewidth=1,
-                      linecolor='#2C998B',
+                      ticks='inside', tickwidth=1.5, tickcolor='#7D7870', ticklen=7, showline=True, linewidth=1,
+                      linecolor='#7D7870',
                       showgrid=True,
                       nticks = 6,
                       # gridwidth=0.3, gridcolor='grey',
