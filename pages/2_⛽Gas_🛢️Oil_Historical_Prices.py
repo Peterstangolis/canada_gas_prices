@@ -1,5 +1,5 @@
 
-from my_functions.date_functions import todays_date, date_from_website
+from my_functions.date_functions import todays_date, date_from_website, add_suffix
 
 from variables import oil_ticker, cad_usd_ticker, periods
 from my_functions.dollar_oil_historical_prices import retrieve_historical_pricing, hist_gas_can, current_can_mean_gas
@@ -10,6 +10,7 @@ from my_functions.clean_statscan_hist_gas_prices_canada import clean_hist_gas_ca
 
 import pandas as pd
 import streamlit as st
+from datetime import timedelta
 
 ## initial variable setup
 yest_open_oil, yest_close_date_oil, oil_hist_prices = retrieve_historical_pricing(oil_ticker)
@@ -46,6 +47,19 @@ ten_years_ago = present_last_month - pd.offsets.DateOffset(years=10)
 #date_from_gaswizard_formatted
 date_from_gaswizard  = date_from_website()
 print(f"Date from gaswizard.ca {date_from_gaswizard}")
+
+
+tomorrow_long_format, two_days_ahead_long_format = add_suffix()
+
+tomorrow = today_1 + timedelta(days=1)
+two_days_ahead = today_1 + timedelta(days=2)
+
+if date_from_gaswizard == tomorrow_long_format:
+    t = tomorrow
+elif date_from_gaswizard == two_days_ahead_long_format:
+    t = two_days_ahead
+else:
+    t = today_1
 
 
 ## Streamlit APP Setup
@@ -131,7 +145,7 @@ with col4:
 with col5:
     st.markdown("<hr style ='width:40%;text-align:left;height:4px;background-color:#BDA523;' >", unsafe_allow_html=True)
     st.metric(label = "GAS", value = f"${current_can_mean_gas_price}/L", delta = None)
-    st.caption(f"{yest_close_date_oil}")
+    st.caption(f"{t}")
     st.markdown("<hr style ='width:40%;text-align:left;height:4px;background-color:#BDA523;' >", unsafe_allow_html=True)
 
 with col6:
