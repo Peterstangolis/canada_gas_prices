@@ -3,7 +3,7 @@ from my_functions.date_functions import todays_date, date_from_website, add_suff
 
 from variables import oil_ticker, cad_usd_ticker, periods
 from my_functions.dollar_oil_historical_prices import retrieve_historical_pricing, hist_gas_can, current_can_mean_gas
-from my_functions.plotly_plot import interactive_plot
+from my_functions.plotly_plot import interactive_plot, interactive_plot_max_method
 
 from my_functions.clean_statscan_hist_gas_prices_canada import clean_hist_gas_can
 
@@ -220,21 +220,54 @@ with st.sidebar:
             disabled=d
         )
 
-## PLOTLY PLOT
-interactive_plot(st.session_state.fuel_type, st.session_state.city_prov, option)
+col13, col14, col15 = st.columns([.3,3,.5])
+with col13:
+    st.markdown("")
 
-
-
+with col14:
+    ## Horizontal Menu Bar
+    choose = option_menu("", ['Time Series Plot of Gas & Oil Prices (CAD$)', 'Max Method Plot of Gas vs Oil'],
+                         icons=['graph-up', 'chevron-double-up'],
+                         menu_icon="app-indicator", default_index=0,
+                         styles={
+                             "font" : {"color": "#F2E3D5", "--hover-color":"#444444"},
+                             "container": {"padding": "10px!important", "background-color": "#0e1117", "border-style": "none", "border-left-color" : "#0e1117",
+                                           "max-width":"1050px", "box-shadow": " #fff 0px 5px 10px -10px, #fff 0px 3px 6px -3px, #fff 0px -2px 6px 0px inset" },
+                             "icon": {"color": "#D9981E", "font-size": "18px"},
+                             "nav-link": {"font-size": "16px", "text-align": "center", "margin": "5px", "padding":"5px", "font-color" : "#2b3573",
+                                          "transition": "--hover-color 2s ease-out 100ms",
+                                           "--hover-color":"#7D7870"},
+                             #"nav-link-hover-color": {"background-color":"#FF1493"},
+                             "nav-link-selected": {"background-color":"transparent", "text-decoration": "underline"}
+                         },
+                         orientation='horizontal'
+                         )
 
 st.markdown("<br>", unsafe_allow_html=True)
-col9, col10, col11, col12 = st.columns([0.5,3,3,1])
-with col9:
-    st.write(" ")
-with col10:
-    with st.expander(label='🖱️ CLICK TO VIEW MORE INFO ABOUT CRUDE OIL PRICING', expanded=False):
-        st.markdown("[PLACEHOLDER]")
-with col11:
-    with st.expander(label=" CLICK TO VIEW INFO ABOUT GAS PRICING PRICING", expanded=False):
-        st.markdown("[PLACEHOLDER]")
-with col12:
-    st.write(" ")
+
+with col15:
+    st.markdown("")
+
+
+## PLOTLY PLOT
+if choose == 'Time Series Plot of Gas & Oil Prices (CAD$)':
+    interactive_plot(st.session_state.fuel_type, st.session_state.city_prov, option)
+
+if choose == 'Max Method Plot of Gas vs Oil':
+    interactive_plot_max_method(st.session_state.fuel_type, st.session_state.city_prov, option)
+
+
+
+
+# st.markdown("<br>", unsafe_allow_html=True)
+# col9, col10, col11, col12 = st.columns([0.5,3,3,1])
+# with col9:
+#     st.write(" ")
+# with col10:
+#     with st.expander(label='🖱️ CLICK TO VIEW MORE INFO ABOUT CRUDE OIL PRICING', expanded=False):
+#         st.markdown("[PLACEHOLDER]")
+# with col11:
+#     with st.expander(label=" CLICK TO VIEW INFO ABOUT GAS PRICING PRICING", expanded=False):
+#         st.markdown("[PLACEHOLDER]")
+# with col12:
+#     st.write(" ")
