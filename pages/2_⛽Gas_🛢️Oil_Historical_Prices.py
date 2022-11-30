@@ -84,10 +84,12 @@ st.markdown("<br>", unsafe_allow_html=True)
 
 
 col1, col2, col3, col4 = st.columns(4)
-st.caption(
-        f"The USD crude oil price was converted to CAD utilizing the exchange rate at close for time period represented",
-        unsafe_allow_html=True)
+st.caption("The \\$USD crude oil price was converted to \\$CAD utilizing the exchange rate at close for time period represented")
 col5, col6, col7, col8 = st.columns(4)
+st.caption(
+        f"The gas price represents the average <span style='color:#B5C2C9;font-weight:medium;'>REGULAR</span> gas prices across <span style = 'color:#CC2533;'>Canada</span> for the month-year displayed<br>",
+        unsafe_allow_html=True)
+
 st.markdown("<br>", unsafe_allow_html=True)
 
 st.caption(f"")
