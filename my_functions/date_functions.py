@@ -37,7 +37,7 @@ def add_suffix():
         suffix_2 = ["st", "nd", "rd"][day % 10 - 1]
 
     tomorrow_long_format = tomorrow.strftime(f"%A %#d{suffix} of %B %Y")
-    two_days_ahead_long_format = two_days_ahead.strftime(f"%A %#d{suffix} of %B %Y")
+    two_days_ahead_long_format = two_days_ahead.strftime(f"%A %#d{suffix_2} of %B %Y")
     return tomorrow_long_format, two_days_ahead_long_format
 
 # 3. This fuinction returns the date from 1 month ago (vs today) in 'mon-yy' format

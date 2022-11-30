@@ -180,7 +180,6 @@ with st.sidebar.expander(label='🖱 CLICK TO REVEAL DATA SOURCES USED IN DASHBO
     Updated USD to CAD rates along with CRUDE OIL prices were obtained using the yfinance package https://pypi.org/project/yfinance/")
 
 
-# Press the green button in the gutter to run the script.
 # if __name__ == '__main__':
 #     print("Program Running:")
 #     clean_hist_gas_can()

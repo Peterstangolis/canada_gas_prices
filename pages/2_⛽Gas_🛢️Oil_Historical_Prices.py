@@ -10,6 +10,7 @@ from my_functions.clean_statscan_hist_gas_prices_canada import clean_hist_gas_ca
 
 import pandas as pd
 import streamlit as st
+from streamlit_option_menu import option_menu
 from datetime import timedelta
 
 ## initial variable setup
@@ -60,6 +61,8 @@ elif date_from_gaswizard == two_days_ahead_long_format:
     t = two_days_ahead
 else:
     t = today_1
+
+print(f"T:{t}")
 
 
 ## Streamlit APP Setup
