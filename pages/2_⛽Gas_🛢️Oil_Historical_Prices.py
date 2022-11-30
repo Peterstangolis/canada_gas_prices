@@ -81,12 +81,12 @@ title = f"<h4 style = 'font-size:50px; color:#F2E2C4; FONT-FAMILY:liberation ser
 
 st.markdown(f"{title}", unsafe_allow_html = True)
 st.markdown("<br>", unsafe_allow_html=True)
+
+
+col1, col2, col3, col4 = st.columns(4)
 st.caption(
         f"The USD crude oil price was converted to CAD utilizing the exchange rate at close for time period represented",
         unsafe_allow_html=True)
-
-col1, col2, col3, col4 = st.columns(4)
-
 col5, col6, col7, col8 = st.columns(4)
 st.markdown("<br>", unsafe_allow_html=True)
 
@@ -99,8 +99,7 @@ with col1:
     #st.subheader(f"{yest_close_date_cad_usd}")
     st.markdown("<br>", unsafe_allow_html=True)
     st.markdown("<hr style ='width:40%;text-align:left;height:4px;background-color:#7D7870;' >", unsafe_allow_html=True)
-    st.metric(label=f"OIL  -  [OPEN: ${yest_open_oil_price_CAD}]", value=f"${yest_close_oil_price_CAD}",
-              delta=f"{d:.2f}", delta_color='inverse')
+    st.metric(label=f"OIL  -  [OPEN: ${yest_open_oil_price_CAD}]", value=f"${yest_close_oil_price_CAD}")
     st.caption(f"{yest_close_date_oil}")
     st.markdown("<hr style ='width:40%;text-align:left;height:4px;background-color:#7D7870;' >", unsafe_allow_html=True)
     st.caption(
