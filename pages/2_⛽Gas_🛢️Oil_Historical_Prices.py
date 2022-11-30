@@ -99,7 +99,8 @@ with col1:
     #st.subheader(f"{yest_close_date_cad_usd}")
     st.markdown("<br>", unsafe_allow_html=True)
     st.markdown("<hr style ='width:40%;text-align:left;height:4px;background-color:#7D7870;' >", unsafe_allow_html=True)
-    st.metric(label = "OIL", value = f"${yest_close_oil_price_CAD}", delta = f"{d:.2f}", delta_color='inverse')
+    st.metric(label=f"OIL  -  [OPEN: ${yest_open_oil_price_CAD}]", value=f"${yest_close_oil_price_CAD}",
+              delta=f"{d:.2f}", delta_color='inverse')
     st.caption(f"{yest_close_date_oil}")
     st.markdown("<hr style ='width:40%;text-align:left;height:4px;background-color:#7D7870;' >", unsafe_allow_html=True)
     st.caption(
