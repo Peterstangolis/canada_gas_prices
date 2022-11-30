@@ -257,6 +257,13 @@ if choose == 'Time Series Plot of Gas & Oil Prices (CAD$)':
 
 if choose == 'Max Method Plot of Gas vs Oil':
     interactive_plot_max_method(st.session_state.fuel_type, st.session_state.city_prov, option)
+    st.markdown('''
+    <div  style = 'position:relative; left:80px; top:2px;'>
+        <H5 style='color:#F2E2C4;opacity:0.5'> Max Method Plot Information</H5>
+        <p style='color:#F2E2C4;opacity:0.5'> The max method is a technique used to visualize and comparing trends of data with different scales. <br>
+        The max method involves showing each data point as a ratio of the respective maximum point in the series.</p>
+    </div>
+    ''', unsafe_allow_html=True)
 
 
 
