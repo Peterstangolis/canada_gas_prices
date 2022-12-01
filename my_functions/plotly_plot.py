@@ -278,7 +278,7 @@ def interactive_plot_max_method(fuel, location_type, location):
             )
         )
     )
-    fig.update_xaxes(ticks="inside", tickwidth=1.5, tickcolor='#F2E2C4', ticklen=5, showline=True, linewidth=1,
+    fig.update_xaxes(ticks="inside", tickwidth=1.5, tickcolor='#F2E2C4', ticklen=5, showline=False, linewidth=1,
                      linecolor='#F2E2C4',
                      tickangle = 0,
                      #tickformat = "%Y",
