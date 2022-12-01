@@ -33,7 +33,7 @@ elif date_from_gaswizard == two_days_ahead_long_format:
     t = two_days_ahead
 else:
     t = today
-print(f"MAP:{t}")
+
 
 # clean_hist_gas_can()
 clean_next_day_gas_prices_can()
@@ -45,6 +45,7 @@ df_gas_price_last_month = pd.read_csv('data/last_month_reg_gas_avg_prov.csv',
                                        header=None,
                                        skiprows=1,
                                        index_col='province')
+
 
 
 df_gas_prices_upcoming = pd.read_excel('data/tomorrow_gasprices_canadiancities_latlng.xlsx')

@@ -35,12 +35,7 @@ elif date_from_gaswizard == two_days_ahead_long_format:
 else:
     t = today
 
-print(today)
-print(last_month)
-print(date_from_gaswizard)
-print(two_days_ahead_long_format)
-print(date_from_gaswizard == two_days_ahead_long_format)
-print(tomorrow_long_format)
+
 print(t)
 
 headline_title, headlines = oil_headlines()

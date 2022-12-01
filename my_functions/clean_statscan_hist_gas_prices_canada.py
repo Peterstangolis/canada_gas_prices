@@ -14,11 +14,14 @@ def clean_hist_gas_can():
     df_cities["REF_DATE"] = df_cities["REF_DATE"].str.strip()
     df_cities.to_excel("data/hist_gas_cities.xlsx", index=False)
 
-    last_month_year = last_month_year_current()
+
 
     last_month_year = last_month_year_current()
 
-    df_prov_avg_gas_prices_regular = df_cities.loc[(df_cities["REF_DATE"] == str(last_month_year)) & (df_cities["Type of fuel"] == "Regular Unleaded")].groupby(by=['PROVINCE'], dropna=False)['VALUE'].mean()
+    print(last_month_year)
+    last_month_of_df_citites = df_cities.iloc[-1]["REF_DATE"]
+
+    df_prov_avg_gas_prices_regular = df_cities.loc[(df_cities["REF_DATE"] == str(last_month_of_df_citites)) & (df_cities["Type of fuel"] == "Regular Unleaded")].groupby(by=['PROVINCE'], dropna=False)['VALUE'].mean()
 
     df_prov_avg_gas_prices_regular.index = df_prov_avg_gas_prices_regular.index.map(str.strip)
 
