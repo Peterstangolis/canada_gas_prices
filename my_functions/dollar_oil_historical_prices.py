@@ -7,8 +7,6 @@ from numpy import mean
 import pandas as pd
 
 
-
-
 ## Dates
 today, full_day, last_month = todays_date()
 
@@ -57,6 +55,7 @@ def retrieve_historical_pricing(ticker):
             key = "period_" + period
             means[key] = round(mean,3)
 
+    print(means)
     return open, yest_close_date, means
 
 def hist_gas_can():
@@ -75,6 +74,7 @@ def hist_gas_can():
         date = (last_month - pd.offsets.DateOffset(years=y)).strftime("%b-%Y")
         hist_gas_price_can[date] = value
 
+    print(hist_gas_price_can)
     return hist_gas_price_can
 
 def current_can_mean_gas():

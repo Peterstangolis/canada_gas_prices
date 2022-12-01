@@ -17,7 +17,6 @@ import streamlit as st
 import folium
 
 
-
 clean_hist_gas_can()
 clean_next_day_gas_prices_can()
 clean_geo_data()
@@ -36,6 +35,8 @@ elif date_from_gaswizard == two_days_ahead_long_format:
 else:
     t = today
 
+print(today)
+print(last_month)
 print(date_from_gaswizard)
 print(two_days_ahead_long_format)
 print(date_from_gaswizard == two_days_ahead_long_format)
