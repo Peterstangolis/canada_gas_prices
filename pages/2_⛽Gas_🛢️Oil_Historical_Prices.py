@@ -155,8 +155,7 @@ with col5:
 
 with col6:
     st.markdown("<hr style ='width:40%;text-align:left;height:4px;background-color:#BDA523;' >", unsafe_allow_html=True)
-    st.metric(label="GAS", value=f"${round(can_hist_gas_prices['Oct-2021'] / 100, 2)}/L", delta=None,
-              delta_color='inverse')
+    st.metric(label="GAS", value=f"${round(can_hist_gas_prices['Oct-2021'] / 100, 2)}/L", delta=None)
     st.caption(f"Oct-2021")
     st.markdown("<hr style ='width:40%;text-align:left;height:4px;background-color:#BDA523;' >", unsafe_allow_html=True)
 
@@ -168,7 +167,7 @@ with col7:
 
 with col8:
     st.markdown("<hr style ='width:40%;text-align:left;height:4px;background-color:#BDA523;' >", unsafe_allow_html=True)
-    st.metric(label = "GAS", value = f"${round(can_hist_gas_prices['Oct-2012']/100,2)}/L", delta = None, delta_color='inverse')
+    st.metric(label = "GAS", value = f"${round(can_hist_gas_prices['Oct-2012']/100,2)}/L", delta = None)
     st.caption(f"Oct-2012")
     st.markdown("<hr style ='width:40%;text-align:left;height:4px;background-color:#BDA523;' >", unsafe_allow_html=True)
 
