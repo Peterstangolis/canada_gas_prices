@@ -35,7 +35,7 @@ else:
     t = today
 
 
-# clean_hist_gas_can()
+last_month_date_of_avg_gas_price = clean_hist_gas_can()
 clean_next_day_gas_prices_can()
 # clean_geo_data()
 
@@ -46,7 +46,7 @@ df_gas_price_last_month = pd.read_csv('data/last_month_reg_gas_avg_prov.csv',
                                        skiprows=1,
                                        index_col='province')
 
-
+print(df_gas_price_last_month)
 
 df_gas_prices_upcoming = pd.read_excel('data/tomorrow_gasprices_canadiancities_latlng.xlsx')
 df_gas_prices_upcoming.lat_lng = df_gas_prices_upcoming.lat_lng.apply(ast.literal_eval)
@@ -62,7 +62,7 @@ max_gas = df_gas_price_last_month.last_month_avg.max()
 colorscale = cm.LinearColormap(colors=["#F7FD66", "#FFB700", '#990000'] ,
 
                                vmin=min_gas, vmax=max_gas)
-colorscale.caption = f"Average Provincial Gas Price for {last_month:%b-%Y}"
+colorscale.caption = f"Average Provincial Gas Price for {last_month_date_of_avg_gas_price}"
 
 ## change avg_gas_prices to string
 #gdf["last_month_avg"] = gdf["last_month_avg"].astype(str)
@@ -93,7 +93,7 @@ def folium_map():
         fill_color='YlOrRd',
         fill_opacity=0.7,
         line_opacity=0.2,
-        # legend_name=f'Last Month Avg Gas Prices {last_month_avg}',
+        # legend_name=f'Last Month Avg Gas Prices {last_month_date_of_avg_gas_price}',
         highlight=True
     )
 

@@ -17,7 +17,7 @@ import streamlit as st
 import folium
 
 
-clean_hist_gas_can()
+last_month_date_of_avg_gas_price = clean_hist_gas_can()
 clean_next_day_gas_prices_can()
 clean_geo_data()
 
