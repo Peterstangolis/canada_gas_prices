@@ -1,5 +1,6 @@
+import os.path
 
-from my_functions.date_functions import todays_date
+from my_functions.date_functions import todays_date, date_from_website
 from variables import days, years, periods
 
 import yfinance as yf
