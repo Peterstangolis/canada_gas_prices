@@ -47,6 +47,8 @@ headline_title, headlines = oil_headlines()
 # SETTING PAGE CONFIG TO WIDE MODE AND ADDING A TITLE AND FAVICON
 st.set_page_config(layout="wide", page_title="Canadian Gas Prices", page_icon=":maple_leaf:")
 
+
+
 with open('style.css') as f:
     st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 

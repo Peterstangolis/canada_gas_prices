@@ -33,8 +33,9 @@ elif date_from_gaswizard == two_days_ahead_long_format:
     t = two_days_ahead
 else:
     t = today
+
 # clean_hist_gas_can()
-# clean_next_day_gas_prices_can()
+clean_next_day_gas_prices_can()
 # clean_geo_data()
 
 ## import the required data
