@@ -282,8 +282,9 @@ def interactive_plot_max_method(fuel, location_type, location):
                      linecolor='#F2E2C4',
                      tickangle = 0,
                      #tickformat = "%Y",
-                     nticks = 20)
-    fig.update_yaxes(showgrid=True, gridwidth=2, gridcolor='#F2E2C4')
+                     nticks = 20,
+                     showgrid=True, gridwidth=0.3, gridcolor='#F2E2C4')
+    fig.update_yaxes(showgrid=True, gridwidth=0.3, gridcolor='#F2E2C4', gridopacity = 0.1)
 
 
 
