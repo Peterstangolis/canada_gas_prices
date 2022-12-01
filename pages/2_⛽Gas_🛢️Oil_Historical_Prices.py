@@ -41,13 +41,12 @@ ten_year_USD_CAD_close = round(cad_usd_hist_rates['period_10y'] * oil_hist_price
 
 today_1, full_day, present_last_month = todays_date()
 
-one_year_ago = present_last_month - pd.offsets.DateOffset(years=1)
-five_years_ago = present_last_month - pd.offsets.DateOffset(years=5)
-ten_years_ago = present_last_month - pd.offsets.DateOffset(years=10)
+one_year_ago = (present_last_month - pd.offsets.DateOffset(years=1)).strftime("%b-%Y")
+five_years_ago = (present_last_month - pd.offsets.DateOffset(years=5)).strftime("%b-%Y")
+ten_years_ago = (present_last_month - pd.offsets.DateOffset(years=10)).strftime("%b-%Y")
 
 #date_from_gaswizard_formatted
 date_from_gaswizard  = date_from_website()
-print(f"Date from gaswizard.ca {date_from_gaswizard}")
 
 
 tomorrow_long_format, two_days_ahead_long_format = add_suffix()
@@ -62,7 +61,6 @@ elif date_from_gaswizard == two_days_ahead_long_format:
 else:
     t = today_1
 
-print(f"T:{t}")
 
 
 ## Streamlit APP Setup
@@ -117,7 +115,7 @@ with col2:
     st.markdown("<hr style ='width:40%;text-align:left;height:4px;background-color:#7D7870;' >", unsafe_allow_html=True)
 
     st.caption(
-        f"{one_year_ago:%b-%Y}: <mark style = 'color:#9FC131;'>${cad_usd_hist_rates['period_1y']}</mark>",
+        f"{one_year_ago}: <mark style = 'color:#9FC131;'>${cad_usd_hist_rates['period_1y']}</mark>",
         unsafe_allow_html=True)
 
 with col3:
@@ -130,7 +128,7 @@ with col3:
     st.markdown("<hr style ='width:40%;text-align:left;height:4px;background-color:#7D7870;' >", unsafe_allow_html=True)
 
     st.caption(
-        f"{five_years_ago:%b-%Y}: <mark style = 'color:#9FC131;'>${cad_usd_hist_rates['period_5y']}</mark>",
+        f"{five_years_ago}: <mark style = 'color:#9FC131;'>${cad_usd_hist_rates['period_5y']}</mark>",
         unsafe_allow_html=True)
 
 with col4:
@@ -142,7 +140,7 @@ with col4:
     st.markdown("<hr style ='width:40%;text-align:left;height:4px;background-color:#7D7870;' >", unsafe_allow_html=True)
 
     st.caption(
-        f"{ten_years_ago:%b-%Y}: <mark style = 'color:#9FC131;'>${cad_usd_hist_rates['period_10y']}</mark>",
+        f"{ten_years_ago}: <mark style = 'color:#9FC131;'>${cad_usd_hist_rates['period_10y']}</mark>",
         unsafe_allow_html=True)
 
 ## ===================   FIRST 4 COLUMNS  ======================================= ##
@@ -155,20 +153,20 @@ with col5:
 
 with col6:
     st.markdown("<hr style ='width:40%;text-align:left;height:4px;background-color:#BDA523;' >", unsafe_allow_html=True)
-    st.metric(label="GAS", value=f"${round(can_hist_gas_prices['Oct-2021'] / 100, 2)}/L", delta=None)
-    st.caption(f"Oct-2021")
+    st.metric(label="GAS", value=f"${round(can_hist_gas_prices[one_year_ago] / 100, 2)}/L", delta=None)
+    st.caption(f"{one_year_ago}")
     st.markdown("<hr style ='width:40%;text-align:left;height:4px;background-color:#BDA523;' >", unsafe_allow_html=True)
 
 with col7:
     st.markdown("<hr style ='width:40%;text-align:left;height:4px;background-color:#BDA523;' >", unsafe_allow_html=True)
-    st.metric(label = "GAS", value = f"${round(can_hist_gas_prices['Oct-2017']/100,2)}/L", delta = None)
-    st.caption(f"Oct-2017")
+    st.metric(label = "GAS", value = f"${round(can_hist_gas_prices[five_years_ago]/100,2)}/L", delta = None)
+    st.caption(f"{five_years_ago}")
     st.markdown("<hr style ='width:40%;text-align:left;height:4px;background-color:#BDA523;' >", unsafe_allow_html=True)
 
 with col8:
     st.markdown("<hr style ='width:40%;text-align:left;height:4px;background-color:#BDA523;' >", unsafe_allow_html=True)
-    st.metric(label = "GAS", value = f"${round(can_hist_gas_prices['Oct-2012']/100,2)}/L", delta = None)
-    st.caption(f"Oct-2012")
+    st.metric(label = "GAS", value = f"${round(can_hist_gas_prices[ten_years_ago]/100,2)}/L", delta = None)
+    st.caption(f"{ten_years_ago}")
     st.markdown("<hr style ='width:40%;text-align:left;height:4px;background-color:#BDA523;' >", unsafe_allow_html=True)
 
 ## ========================================    NEXT 4 COLUMNS   =================================================== ##

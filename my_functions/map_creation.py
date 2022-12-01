@@ -33,6 +33,7 @@ elif date_from_gaswizard == two_days_ahead_long_format:
     t = two_days_ahead
 else:
     t = today
+print(f"MAP:{t}")
 
 # clean_hist_gas_can()
 clean_next_day_gas_prices_can()
@@ -109,7 +110,7 @@ def folium_map():
             flags_src = flags[prov]
             if 'Amount' in df_gas_prices_upcoming.columns:
                 popup_text = folium.Popup(
-                    html=f"""<center><img src= {flags_src} alt='Province Flag' width = '60', height = '30'><h4 style = 'font-family:montserrat;'><strong> {df_gas_prices_upcoming.iloc[i, 0].upper()}</strong></center></h4><center><h5 style = 'font-family:montserrat;'><strong> {t.strftime("%b %d, %y")}</strong></center></h5><h4 style = 'font-family:montserrat;'><center><strong><p style = 'color:{"#52382A" if df_gas_prices_upcoming.iloc[i, 10] == 0 else "#912D48" if df_gas_prices_upcoming.iloc[i, 10] > 0 else "#164c45"};'>{df_gas_prices_upcoming.iloc[i, 11]}</p>  ${df_gas_prices_upcoming.iloc[i, 8]}/L</strong></center></h4>""",
+                    html=f"""<center><img src= {flags_src} alt='Province Flag' width = '60', height = '30'><h4 style = 'font-family:montserrat;'><strong> {df_gas_prices_upcoming.iloc[i, 0].upper()}</strong></center></h4><center><h5 style = 'font-family:montserrat;'><strong> {t.strftime("%b %#d, %y")}</strong></center></h5><h4 style = 'font-family:montserrat;'><center><strong><p style = 'color:{"#52382A" if df_gas_prices_upcoming.iloc[i, 10] == 0 else "#912D48" if df_gas_prices_upcoming.iloc[i, 10] > 0 else "#164c45"};'>{df_gas_prices_upcoming.iloc[i, 11]}</p>  ${df_gas_prices_upcoming.iloc[i, 8]}/L</strong></center></h4>""",
                     max_width=160, min_width=130)
             else:
                 popup_text = folium.Popup(
