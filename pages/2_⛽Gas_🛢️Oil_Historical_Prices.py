@@ -177,7 +177,7 @@ with col8:
 
 with st.sidebar:
     st.markdown("<br>",unsafe_allow_html=True)
-    with st.expander(label="ADDITIONAL CHART OPTIONS", expanded=False):
+    with st.expander(label="📈 ADDITIONAL CHART OPTIONS", expanded=False):
         st.markdown("<br>", unsafe_allow_html=True)
         ## Fuel type radiobutton
         st.markdown("<br>", unsafe_allow_html=True)
