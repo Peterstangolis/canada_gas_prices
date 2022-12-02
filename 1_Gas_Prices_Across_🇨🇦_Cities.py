@@ -45,8 +45,8 @@ st.set_page_config(layout="wide", page_title="Canadian Gas Prices", page_icon=":
 
 st.markdown(f'''
     <style>
-        section[data-testid="stSidebar"] .css-ng1t4o {{width: 14rem;}}
-        section[data-testid="stSidebar"] .css-1d391kg {{width: 14rem;}}
+        section[data-testid="stSidebar"] .css-ng1t4o {{min-width: 15rem;}}
+        section[data-testid="stSidebar"] .css-1d391kg {{min-width: 15rem;}}
     </style>
 ''',unsafe_allow_html=True)
 
