@@ -61,7 +61,7 @@ title = f"<h4 style = 'font-size:40px; color:#F2E2C4; FONT-FAMILY:liberation ser
 
 st.markdown(f"{title}", unsafe_allow_html=True)
 st.markdown(f"<h4 style='color:#F2E2C4; font-size:25px;'> Select  the <mark style = 'color:#0076A9; background-color:transparent; font-size: 29px;'> BLUE </mark> icon to view the prices for <mark style = 'color:#B5C2C9; background-color:transparent; font-size: 28px;'> REGULAR </mark> gas in your city </h4>", unsafe_allow_html = True)
-st.markdown(f"<h4 style='color:#F2E2C4; font-size:20px;'> Moving your cursor over a province will reveal the average price of REGULAR gas for {last_month_date_of_avg_gas_price:%b-%Y} </h4>", unsafe_allow_html = True)
+st.markdown(f"<h4 style='color:#F2E2C4; font-size:20px;'> Moving your cursor over a province will reveal the average price of REGULAR gas for {last_month_date_of_avg_gas_price} </h4>", unsafe_allow_html = True)
 
 folium_map()
 
