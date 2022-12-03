@@ -75,7 +75,6 @@ def hist_gas_can():
         date = (last_month - pd.offsets.DateOffset(years=y)).strftime("%b-%Y")
         hist_gas_price_can[date] = value
 
-    print(hist_gas_price_can)
     return hist_gas_price_can
 
 def current_can_mean_gas():

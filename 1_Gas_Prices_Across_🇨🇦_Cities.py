@@ -34,9 +34,8 @@ elif date_from_gaswizard == two_days_ahead_long_format:
     t = two_days_ahead
 else:
     t = today
-
-
 print(t)
+
 
 headline_title, headlines = oil_headlines()
 

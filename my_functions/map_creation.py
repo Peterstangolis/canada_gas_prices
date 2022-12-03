@@ -46,7 +46,6 @@ df_gas_price_last_month = pd.read_csv('data/last_month_reg_gas_avg_prov.csv',
                                        skiprows=1,
                                        index_col='province')
 
-print(df_gas_price_last_month)
 
 df_gas_prices_upcoming = pd.read_excel('data/tomorrow_gasprices_canadiancities_latlng.xlsx')
 df_gas_prices_upcoming.lat_lng = df_gas_prices_upcoming.lat_lng.apply(ast.literal_eval)
