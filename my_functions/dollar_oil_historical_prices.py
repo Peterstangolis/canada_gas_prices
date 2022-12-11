@@ -36,11 +36,12 @@ def retrieve_historical_pricing(ticker):
     for i, period in enumerate(periods[0:2]):
         if days[i] == 1 and today.weekday() == 6:
             data = get_yahoo_data(ticker, '3d')
+            print(data.head())
             close = data["Close"][-1]
             open = data["Open"][-1]
             key = "period_" + "1d"
             means[key] = round(close, 3)
-            yest_close_date = data.index[0].strftime("%b %d, %Y")
+            yest_close_date = data.index[-1].strftime("%b %d, %Y")
         elif days[i] == 1 and today.weekday() in [0,1,2,3,4,5] :
             data = get_yahoo_data(ticker, period)
             close = data["Close"][-1]

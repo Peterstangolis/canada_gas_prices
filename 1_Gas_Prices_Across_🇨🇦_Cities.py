@@ -17,6 +17,31 @@ import streamlit as st
 import folium
 
 
+# last_month_date_of_avg_gas_price = clean_hist_gas_can()
+# clean_next_day_gas_prices_can()
+# clean_geo_data()
+#
+# today, long_format_today, last_month = todays_date()
+# tomorrow_long_format, two_days_ahead_long_format = add_suffix()
+# date_from_gaswizard = date_from_website()
+#
+# tomorrow = today + timedelta(days=1)
+# two_days_ahead = today + timedelta(days=2)
+#
+# if date_from_gaswizard == tomorrow_long_format:
+#     t = tomorrow
+# elif date_from_gaswizard == two_days_ahead_long_format:
+#     t = two_days_ahead
+# else:
+#     t = today
+# print(t)
+#
+#
+# headline_title, headlines = oil_headlines()
+
+# SETTING PAGE CONFIG TO WIDE MODE AND ADDING A TITLE AND FAVICON
+st.set_page_config(layout="wide", page_title="Canadian Gas Prices", page_icon=":maple_leaf:")
+
 last_month_date_of_avg_gas_price = clean_hist_gas_can()
 clean_next_day_gas_prices_can()
 clean_geo_data()
@@ -38,9 +63,6 @@ print(t)
 
 
 headline_title, headlines = oil_headlines()
-
-# SETTING PAGE CONFIG TO WIDE MODE AND ADDING A TITLE AND FAVICON
-st.set_page_config(layout="wide", page_title="Canadian Gas Prices", page_icon=":maple_leaf:")
 
 st.markdown(f'''
     <style>
