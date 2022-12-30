@@ -10,6 +10,7 @@ import pandas as pd
 
 ## Dates
 today, full_day, last_month = todays_date()
+print(today, full_day, last_month)
 
 
 ## Retriee relevant data from yfinance
@@ -68,10 +69,10 @@ def hist_gas_can():
 
     for y in years:
         value = df_can_hist[
-            df_can_hist["REF_DATE"] == (last_month - pd.offsets.DateOffset(years=y)).strftime("%b-%y")].reset_index(
+            df_can_hist["REF_DATE"] == (last_month - pd.offsets.DateOffset(years=y)).strftime("%y-%b")].reset_index(
             drop=True)._get_value(0, 'VALUE')
         date = df_can_hist[
-            df_can_hist["REF_DATE"] == (last_month - pd.offsets.DateOffset(years=y)).strftime("%b-%y")].reset_index(
+            df_can_hist["REF_DATE"] == (last_month - pd.offsets.DateOffset(years=y)).strftime("%y-%b")].reset_index(
             drop=True)._get_value(0, 'REF_DATE')
         date = (last_month - pd.offsets.DateOffset(years=y)).strftime("%b-%Y")
         hist_gas_price_can[date] = value

@@ -63,6 +63,7 @@ def interactive_plot(fuel, location_type, location):
             df = df[df["PROVINCE"] == location]
 
     df = df.reset_index(drop=True)
+    print(f"Year {df['REF_DATE'][0].split('-')}")
     if int((df["REF_DATE"][0].split("-")[0])) <= 22:
         year = "20" + str((df["REF_DATE"][0].split("-")[0]))
         y_diff = datetime.datetime.today().year - int(year)
