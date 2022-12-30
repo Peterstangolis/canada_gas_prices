@@ -128,6 +128,6 @@ def folium_map():
 
 
     ## Save the map
-    m.save('data/gas_prices.html')
+    #m.save('data/gas_prices.html')
     # st_map = st_folium(m, width = 1000, height = 700)
     folium_static(m, width=1000, height=600)
