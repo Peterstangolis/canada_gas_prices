@@ -64,11 +64,11 @@ def interactive_plot(fuel, location_type, location):
 
     df = df.reset_index(drop=True)
     print(f"Year {df['REF_DATE'][0].split('-')}")
-    if int((df["REF_DATE"][0].split("-")[0])) <= 22:
-        year = "20" + str((df["REF_DATE"][0].split("-")[0]))
+    if int((df["REF_DATE"][0].split("-")[1])) <= 22:
+        year = "20" + str((df["REF_DATE"][0].split("-")[1]))
         y_diff = datetime.datetime.today().year - int(year)
     else:
-        year = "19" + str((df["REF_DATE"][0].split("-")[0]))
+        year = "19" + str((df["REF_DATE"][0].split("-")[1]))
         y_diff = datetime.datetime.today().year - int(year)
 
     ## Yahoo Data
